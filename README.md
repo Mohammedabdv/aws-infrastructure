@@ -1,49 +1,76 @@
-# AWS Infrastructure Showcase: Manual vs Automated ☁️
+# AWS High Availability Infrastructure  
+### Manual (Console) vs Infrastructure as Code (Terraform)
 
-This repository contains two projects demonstrating my ability to design and deploy scalable and highly available cloud environments on AWS, focusing on networking and compute layers.
+This repository demonstrates a **highly available and scalable AWS infrastructure** designed using AWS best practices.  
+The same architecture is implemented in **two different approaches**:
 
----
+- **Manual deployment using AWS Management Console**
+- **Automated deployment using Terraform (Infrastructure as Code)**
 
-## 📂 Repository Structure
-
-| Project Folder | Deployment Method | Key Focus |
-| :--- | :--- | :--- |
-| `AWS-HA-Scalable-Infrastructure` | **AWS Management Console** | Manual Setup, HA Design, Scaling |
-| `aws-terraform-3tier-architecture` | **Terraform (IaC)** | Automation, VPC Modularization, Security |
+The goal of this project is to showcase a clear understanding of **AWS core services**, **high availability concepts**, and the ability to transition from manual setups to fully automated infrastructure.
 
 ---
 
-## 🛠 Project 1: High Availability & Scalable Infrastructure
-**Method:** Manual Configuration via AWS Console
+## 🏗 Architecture Overview
 
-In this lab, I built a resilient environment from scratch using the AWS Console. The goal was to understand how each component interacts to provide a seamless user experience under load.
+The infrastructure is designed to ensure:
 
-### Key Features:
-* **High Availability:** Instances deployed across multiple Availability Zones.
-* **Elastic Load Balancing:** Application Load Balancer (ALB) to route traffic and perform health checks.
-* **Auto Scaling:** Configured policies to automatically add/remove EC2 instances based on CPU utilization.
-* **VPC Networking:** Custom VPC with Public and Private subnets and NAT Gateway for secure internet access.
+- High Availability across multiple Availability Zones
+- Load balancing of incoming traffic
+- Automatic scaling based on demand
+- Secure and isolated networking
+
+### Core Components
+
+- **VPC** with public subnets across multiple Availability Zones
+- **Application Load Balancer (ALB)** to distribute traffic
+- **Auto Scaling Group (ASG)** for EC2 instances
+- **Security Groups** following least-privilege principles
+- **IAM Roles** for secure EC2 permissions
+
+> This project focuses on the **networking and compute layers** and does not include a database layer.
 
 ---
 
-## 🚀 Project 2: Scalable Architecture via Terraform
-**Method:** Infrastructure as Code (IaC)
+## ⚙️ Deployment Approaches
 
-This project automates the deployment of a multi-tier web/app architecture. By using Terraform, the entire infrastructure is version-controlled and can be recreated in minutes.
+### 1️⃣ AWS Console (Manual)
 
-### Infrastructure Components:
-1.  **Public Tier:** Hosts the Load Balancer and Bastion host (if applicable).
-2.  **Application Tier:** Private subnets hosting the web servers/application logic, isolated from direct internet access.
-3.  **Security:** Detailed Security Groups for strict traffic control between tiers.
+- Resources are created manually through the AWS Management Console
+- Helps understand how services interact behind the scenes
+- Useful for learning and validation of AWS fundamentals
 
-### Tools Used:
-* **Terraform:** For infrastructure provisioning.
-* **HCL:** To define reusable modules and resources.
-* **AWS Provider:** To communicate with AWS APIs.
+### 2️⃣ Terraform (Infrastructure as Code)
 
-### Quick Start (Terraform):
-```bash
-cd aws-terraform-3tier-architecture
-terraform init
-terraform plan
-terraform apply
+- Fully automated deployment using Terraform
+- Modular structure for reusability and clarity
+- Easy to scale, modify, and destroy infrastructure
+- Demonstrates real-world DevOps and Cloud practices
+
+---
+
+## 🚀 Key Learning Outcomes
+
+- Designing highly available architectures on AWS
+- Understanding ALB and Auto Scaling integration
+- Difference between manual and automated infrastructure
+- Writing clean and reusable Terraform modules
+- Applying AWS security best practices
+
+---
+
+## 🛠 Technologies Used
+
+- **AWS EC2**
+- **Application Load Balancer (ALB)**
+- **Auto Scaling Group (ASG)**
+- **VPC & Subnets**
+- **IAM & Security Groups**
+- **Terraform**
+
+
+
+
+
+
+
